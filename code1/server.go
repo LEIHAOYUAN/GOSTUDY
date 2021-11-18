@@ -6,9 +6,8 @@ import (
 	"net/http"
 )
 
-func handler(w http.ResponseWriter, r *http.Request) {
+func handler(_ http.ResponseWriter, _ *http.Request) {
 	s := "你好，世界！"
-	fmt.Fprintf(w, "%s", s)
 	log.Println(s)
 }
 
