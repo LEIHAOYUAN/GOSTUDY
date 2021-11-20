@@ -9,7 +9,7 @@ func main() {
 		}
 		fmt.Print(i, "   ")
 	}
-	fmt.Println()
+	fmt.Println("循环1结束...........")
 	i := 5
 	for {
 		if i < 1 {
@@ -19,7 +19,7 @@ func main() {
 		i--
 	}
 
-	fmt.Println()
+	fmt.Println("循环2结束...........")
 	arr := []int{1, 2, 3, 4, 5}
 	for i, v := range arr {
 		fmt.Println("index:", i, "value:", v)
