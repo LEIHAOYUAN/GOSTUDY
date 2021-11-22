@@ -10,7 +10,7 @@ slice = append(slice, elem1, elem2)
 // 拼接两个slice，这时候append只支持两个参数，不支持任意个参数
 slice = append(slice, anotherSlice...)
 */
-func main() {
+func appendtest() {
 	test()
 	fmt.Println("append操作.............................")
 	var a = []int{1, 2, 3}
