@@ -19,4 +19,8 @@ func main() {
 	fmt.Println(b1)
 	fmt.Println(c)
 	fmt.Println(d)
+	// 数组的遍历
+	for i := range d {
+		fmt.Println(i)
+	}
 }
