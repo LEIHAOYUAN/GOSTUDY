@@ -9,10 +9,10 @@ import "fmt"
 可以简单理解为GO语言的方法就是将函数的第一个参数移动到了函数名称前面
 */
 // 定义一个矩形
-type Rectangle struct{ w, h float64 }
+type Rectangle0 struct{ w, h float64 }
 
-func main() {
-	rec := Rectangle{w: 2, h: 3}
+func test() {
+	rec := Rectangle0{w: 2, h: 3}
 	fmt.Println(area(rec.w, rec.h))
 	fmt.Println(rec.area())
 }
@@ -23,6 +23,6 @@ func area(w, h float64) float64 {
 }
 
 // 定义一个矩形类型的方法
-func (r Rectangle) area() float64 {
+func (r Rectangle0) area() float64 {
 	return r.w * r.h
 }
