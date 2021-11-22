@@ -30,4 +30,10 @@ func main() {
 	var sub3 = s[:]
 	fmt.Println("截取全部字符串：", sub3, "s[:]地址：", &sub3)
 
+	// 其他字符串API
+	// strings:提供搜索、比较、切分与字符串连接功能
+	// bytes:对字符串的底层字节进行操作，可以使用[]bytes转换类型后进行处理
+	// strconv:主要是字符串与其他类型的转换，比如整数、布尔类型
+	// unicode:主要是对字符串中的单个字符做判断，比如IsLetter、IsDigit、IsUpper
+
 }
