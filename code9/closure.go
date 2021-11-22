@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 /**
-【闭包】要点：
+【闭包】要点：https://blog.csdn.net/cbmljs/article/details/103353746
 0. 闭包本身可以看作是独立对象
 1. 闭包函数与普通函数的最大区别就是参数不是值传递，而是引用传递，所以闭包函数可以操作自己函数以外的变量。
 2. 因为闭包函数对外部变量的操作才使其不能被释放回收，从而跨过了作用域的限制
@@ -15,6 +15,11 @@ func main() {
 	fmt.Println(f())
 	fmt.Println(f())
 	fmt.Println(f())
+	fmt.Println("可变长参数函数测试............................")
+	args := []interface{}{1234, "abcd"}
+	print(args)
+	// 函数调用加省略号的作用：将切片中的值解析出来，然后传递给参数
+	print(args...)
 }
 
 func double() func() int {
@@ -25,12 +30,27 @@ func double() func() int {
 	}
 }
 
-// 具名函数
-func Square(a int) int {
-	return a * a
+/*
+多返回值函数
+*/
+func swap(a, b int) (int, int) {
+	return b, a
 }
 
-// 匿名函数
-var square = func(a int) int {
-	return a * a
+/*
+变长参数函数的定义
+*/
+func sum(a int, others ...int) int {
+	for _, v := range others {
+		a += v
+	}
+	return a
+}
+
+/*
+空接口定义可变长参数，意味着可以传递任何类型的参数。
+
+*/
+func print(a ...interface{}) {
+	fmt.Println(a...)
 }
