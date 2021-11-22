@@ -13,14 +13,14 @@ make和new关键字注意点：
 2. new函数返回初始化的类型对应的指针，new函数主要用在struct初始化中，其他场景应用较少
 */
 
-type Person struct {
+type Man struct {
 	Name   string
 	Gender int
 	Age    int
 }
 
-func main() {
-	p1 := Person{Name: "Scott", Gender: 1, Age: 30}
+func initStruct() {
+	p1 := Man{Name: "Scott", Gender: 1, Age: 30}
 	p2 := AddAge(p1)
 	fmt.Println(p1)
 	fmt.Println(p2)
@@ -28,15 +28,15 @@ func main() {
 	AddAgePlus(&p1)
 	fmt.Println(p1)
 
-	pp := new(Person)
+	pp := new(Man)
 	AddAgePlus(pp)
 	fmt.Println(pp)
 }
 
-func AddAge(p Person) (p2 Person) {
+func AddAge(p Man) (p2 Man) {
 	p.Age += 1
 	return p
 }
-func AddAgePlus(pp *Person) {
+func AddAgePlus(pp *Man) {
 	pp.Age += 1
 }
