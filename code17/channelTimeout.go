@@ -8,7 +8,7 @@ import (
 /*
 通过time.After的方式解决超时处理
 */
-func main() {
+func timeout() {
 	//匿名函数中的代码块休眠4s
 	ch1 := make(chan string)
 	go func() {
