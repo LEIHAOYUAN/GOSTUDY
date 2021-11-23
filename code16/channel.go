@@ -35,3 +35,19 @@ func writeChan(c chan int, x int) {
 	close(c)
 	fmt.Println("End:", x)
 }
+
+/*
+双向通道
+*/
+func one(c chan int, x int) {
+	fmt.Println(x)
+	c <- x
+}
+
+/*
+带有方向的通道
+*/
+func two(c chan<- int, x int) {
+	fmt.Println(x)
+	c <- x
+}
