@@ -13,17 +13,25 @@ import (
 */
 
 func main() {
-	// 定义通道c
 	c := make(chan int)
 	go writeChan(c, 666)
 	time.Sleep(1 * time.Second)
+	fmt.Println("Read:", <-c)
+	if _, ok := <-c; ok {
+		fmt.Println("Channel is Open")
+	} else {
+		fmt.Println("Channel is closed")
+	}
 }
 
+/*
+通过close函数关闭channel不是必须的，只有在需要通知其他的数据读取通道数据已经写入完成时，才必须关闭。
+不主动关闭的通道，垃圾回收器会自动回收。
+而文件操作的close函数则是必须有的，请读者区分开。
+*/
 func writeChan(c chan int, x int) {
-	fmt.Println(x)
-	// 将x的值写入channel内
+	fmt.Println("Start:", x)
 	c <- x
-	// 使用close函数关闭channel，channel关闭后就不可以在通信了
 	close(c)
-	fmt.Println(x)
+	fmt.Println("End:", x)
 }
