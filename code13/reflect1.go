@@ -18,7 +18,7 @@ type Y struct {
 	D2 string
 }
 
-func main() {
+func test() {
 	x1 := X{A1: 100, B1: 3.14, C1: true}
 	y1 := Y{A2: 1, B2: 2, C2: 1.5, D2: "hello"}
 	rx1 := reflect.ValueOf(&x1).Elem()
