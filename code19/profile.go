@@ -15,6 +15,15 @@ import (
 3. 垃圾回收占用时间
 
 使用runtime/pprof进行性能分析
+
+CPU测试：
+对CPU的测试主要是用runcputest函数不停地向通道ch4cpu写入uint64类型的数据，
+并由procmsg()函数不停地读数据，而procmsg函数结束的条件是等到chTimer可读，chTimer是启动了一个goroutine并在开始运行15秒后往chTimer写入数据的过程，也就是说，大概在chTimer执行以后，procmsg函数就有机会结束了。
+因为有大量的通道读写，所以这是测试CPU的主要代码
+
+内存测试：
+对于内存的测试，则是通过大量分配内存堆实现的，并且每次都有一个变量是可回收的，如此反复，每次都执行垃圾回收，并记录堆的信息，这是在模拟一种内存使用情况，可以通过分析记录查看内存泄露等情况
+
 */
 
 var ch4cpu chan uint64
