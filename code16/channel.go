@@ -19,8 +19,8 @@ import (
 
 func main() {
 	c := make(chan int)
-	go writeChan(c, 666)
-	time.Sleep(1 * time.Second)
+	go writeChan(c, 88888)
+	time.Sleep(2 * time.Second)
 	fmt.Println("Read:", <-c)
 	if _, ok := <-c; ok {
 		fmt.Println("Channel is Open")
