@@ -17,7 +17,7 @@ import (
 而如果队列是空的，接收数据的goroutine则进入阻塞状态等待另一个goroutine在通道上发送数据
 */
 
-func main() {
+func test() {
 	c := make(chan int)
 	go writeChan(c, 88888)
 	time.Sleep(2 * time.Second)
