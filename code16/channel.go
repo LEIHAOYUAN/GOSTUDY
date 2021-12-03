@@ -42,6 +42,10 @@ func writeChan(c chan int, x int) {
 }
 
 /*
+当使用通道channel作为函数参数的时候，可以指定通道的方向，也就是指定该通道是发送数据还是接受数据
+*/
+
+/*
 双向通道
 */
 func one(c chan int, x int) {
@@ -50,7 +54,8 @@ func one(c chan int, x int) {
 }
 
 /*
-带有方向的通道
+带有方向的通道：
+
 */
 func two(c chan<- int, x int) {
 	fmt.Println(x)
