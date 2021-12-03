@@ -55,9 +55,18 @@ func one(c chan int, x int) {
 
 /*
 带有方向的通道：
-
+<- 说明c通道只能用于写入数据。如果试图从只写通道读取数据化，编译器会报错
 */
 func two(c chan<- int, x int) {
 	fmt.Println(x)
 	c <- x
+}
+
+/*
+单向通道：
+改通道参数只能用于读取数据，如果试图从只读通道写数据，编译器会报错
+*/
+func three(c <-chan int) {
+	a := <-c
+	fmt.Println(a)
 }
