@@ -1,6 +1,20 @@
 package code23
 
-import "testing"
+import (
+	"testing"
+)
+
+func TestModifySlice(t *testing.T) {
+	param := [5]int{10, 20, 30, 40, 50}
+	slice := param[1:3]
+	t.Log("修改前原始切片：", param)
+	t.Log("修改前slice：", slice)
+	for i, v := range slice {
+		slice[i] = v + 1
+	}
+	t.Log("修改后slice：", slice)
+	t.Log("修改后原始切片：", param)
+}
 
 /*
 从数组生成一个新的切片
