@@ -7,13 +7,6 @@ import (
 /*
 测试切片扩容
 */
-func TestScale(t *testing.T) {
-	arr := make([]int, 0)
-	for i := 0; i < 2000; i++ {
-		t.Log("len=", len(arr), "cap=", cap(arr))
-		arr = append(arr, i)
-	}
-}
 
 /*
 测试切片生成的心切片和原始切面共用底层数组
